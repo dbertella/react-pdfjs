@@ -76,9 +76,6 @@ class Pdf extends Component {
     const {page} = this.state;
     if (page) {
       let {canvas} = this.refs;
-      if (canvas.getDOMNode) { // compatible with react 0.13
-        canvas = canvas.getDOMNode();
-      }
       const canvasContext = canvas.getContext('2d');
       const {scale} = this.props;
       const viewport = page.getViewport(scale);
